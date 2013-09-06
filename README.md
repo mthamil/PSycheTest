@@ -1,4 +1,5 @@
 PSycheTest
 ==========
 
-A plugin for Visual Studio that enables writing unit tests in PowerShell.
+PSycheTest is a framework that enables running tests written in PowerShell.
+Currently there is only one test runner, a plugin for Visual Studio/Team Foundation Server.
