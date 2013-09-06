@@ -1,0 +1,25 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="T4Toolbox.tt" #>
+<#@ output extension=".cs"#>
+<#@ import namespace="System.IO" #>
+using System.IO;
+
+namespace Tests.Integration.TestScripts
+{
+    /// <summary>
+    /// Contains references to test script files.
+    /// </summary>
+	public static class ScriptFiles
+	{
+<#
+        foreach (var filename in Directory.EnumerateFiles(Host.ResolvePath(@""), "*.ps1"))
+        {
+#>
+        public static readonly FileInfo <#= Path.GetFileNameWithoutExtension(filename) #> = 
+            new FileInfo(@"<#=Path.Combine(@".\TestScripts", Path.GetFileName(filename))#>");
+<#
+        }
+
+#>
+	}
+}

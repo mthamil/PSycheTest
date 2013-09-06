@@ -1,0 +1,17 @@
+  PSyche Test
+  Copyright 2013 Matthew Hamilton - https://github.com/mthamil/PSycheTest
+
+   The following libraries provide testing support: 
+        xUnit.net is used as the unit testing framework
+        and is released under the Microsoft Public License (Ms-PL):
+            http://xunit.codeplex.com/
+
+        Moq is used for mock objects and is released under the BSD license:
+            Copyright (c) 2007. Clarius Consulting, Manas Technology Solutions, InSTEDD
+            http://code.google.com/p/moq/
+            All rights reserved.
+
+        TheoryDataSet.cs is from ASP.Net, provides theory test support, 
+        and is released under the Apache 2.0 license:
+            Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.
+            http://aspnetwebstack.codeplex.com/

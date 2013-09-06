@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix Version="1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  
+  <Identifier Id="PSycheTest.Runners.VisualStudio.dca2d819-4b92-4d35-b6d1-2d09adcc33ff">
+    <Name>PSycheTest Visual Studio Runner</Name>
+    <Author>Matt Hamilton</Author>
+    <Version>0.9.0.0</Version>
+    <Description xml:space="preserve">A Visual Studio test runner that enables execution of tests written as PowerShell scripts.</Description>
+    <Locale>1033</Locale>
+    <InstalledByMsi>false</InstalledByMsi>
+    <SupportedProducts>
+      <VisualStudio Version="11.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.5"/>
+  </Identifier>
+  
+  <References />
+  
+  <Content>
+    <CustomExtension Type="UnitTestExtension">PSycheTest.Runners.VisualStudio.dll</CustomExtension>
+    <MefComponent>PSycheTest.Runners.VisualStudio.dll</MefComponent>
+  </Content>
+  
+</Vsix>

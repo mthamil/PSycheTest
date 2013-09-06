@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D92ECD4-84D9-4CC1-84F1-DAE83A459229}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PSycheTest.Runners.Framework</RootNamespace>
+    <AssemblyName>PSycheTest.Runners.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\PSycheTest.Runners.Framework.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\PSycheTest.Runners.Framework.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfo.Global.cs">
+      <Link>Properties\AssemblyInfo.Global.cs</Link>
+    </Compile>
+    <Compile Include="Extensions\CmdletExtensions.cs" />
+    <Compile Include="Extensions\PowerShellExtensions.cs" />
+    <Compile Include="Extensions\RunspaceExtensions.cs" />
+    <Compile Include="ILocationManager.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IPowerShellTestDiscoverer.cs" />
+    <Compile Include="IPowerShellTestExecutor.cs" />
+    <Compile Include="IScriptParser.cs" />
+    <Compile Include="ITestExecutionTransaction.cs" />
+    <Compile Include="ITestFunction.cs" />
+    <Compile Include="ITestResultProvider.cs" />
+    <Compile Include="ITestScript.cs" />
+    <Compile Include="ParseResult.cs" />
+    <Compile Include="PowerShellTestDiscoverer.cs" />
+    <Compile Include="PowerShellTestExecutor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PSScriptParser.cs" />
+    <Compile Include="Results\ErrorRecordWrapper.cs" />
+    <Compile Include="Results\ExceptionScriptError.cs" />
+    <Compile Include="Results\FailedResult.cs" />
+    <Compile Include="Results\IErrorRecord.cs" />
+    <Compile Include="Results\PassedResult.cs" />
+    <Compile Include="Results\PSScriptError.cs" />
+    <Compile Include="Results\ScriptError.cs" />
+    <Compile Include="Results\SkippedResult.cs" />
+    <Compile Include="Results\TestResult.cs" />
+    <Compile Include="Results\TestStatus.cs" />
+    <Compile Include="TestDiscoveryVisitor.cs" />
+    <Compile Include="TestEndedEventArgs.cs" />
+    <Compile Include="TestExecutionTransaction.cs" />
+    <Compile Include="TestFunction.cs" />
+    <Compile Include="TestLocationManager.cs" />
+    <Compile Include="TestScript.cs" />
+    <Compile Include="TestScriptEndedEventArgs.cs" />
+    <Compile Include="TestScriptStartingEventArgs.cs" />
+    <Compile Include="TestSourceInfo.cs" />
+    <Compile Include="TestStartingEventArgs.cs" />
+    <Compile Include="Timers\ITestTimer.cs" />
+    <Compile Include="Timers\StopwatchTimer.cs" />
+    <Compile Include="Timers\TimerToken.cs" />
+    <Compile Include="Utilities\Collections\EnumerableExtensions.cs" />
+    <Compile Include="Utilities\Collections\ReverseComparer.cs" />
+    <Compile Include="Utilities\InputOutput\TemporaryDirectory.cs" />
+    <Compile Include="Utilities\InputOutput\TemporaryFile.cs" />
+    <Compile Include="Utilities\Option.cs" />
+    <Compile Include="Utilities\Reflection\Reflect.cs" />
+    <Compile Include="Utilities\Text\StringExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PSycheTest\PSycheTest.csproj">
+      <Project>{8083866e-edf4-429c-a944-2e5b3a06a228}</Project>
+      <Name>PSycheTest</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
