@@ -45,6 +45,9 @@ namespace PSycheTest.Runners.VisualStudio
 		/// <remarks>This method is executed when test cases have already been discovered or when a selected subset of tests are run.</remarks>
 		public void RunTests(IEnumerable<TestCase> tests, IRunContext runContext, IFrameworkHandle frameworkHandle)
 		{
+			if (runContext.KeepAlive)
+				frameworkHandle.EnableShutdownAfterTestRun = true;
+
 			Channels.UnregisterAll();
 
 			var selectedTests = new HashSet<string>(tests.Select(test => test.FullyQualifiedName));
@@ -59,6 +62,9 @@ namespace PSycheTest.Runners.VisualStudio
 		/// <see cref="ITestExecutor.RunTests(IEnumerable{string},IRunContext,IFrameworkHandle)"/>
 		public void RunTests(IEnumerable<string> sources, IRunContext runContext, IFrameworkHandle frameworkHandle)
 		{
+			if (runContext.KeepAlive)
+				frameworkHandle.EnableShutdownAfterTestRun = true;
+
 			Channels.UnregisterAll();
 
 			var logger = new VSLogger(frameworkHandle);
