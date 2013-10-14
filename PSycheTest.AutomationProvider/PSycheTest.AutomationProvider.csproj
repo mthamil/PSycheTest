@@ -39,8 +39,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="TestCaseAutomator.AutomationProviders.Interfaces">
-      <HintPath>..\..\..\..\..\..\..\..\TFSTestCaseAutomator\TestCaseAutomator.AutomationProviders.Interfaces\bin\Release\TestCaseAutomator.AutomationProviders.Interfaces.dll</HintPath>
+    <Reference Include="TestCaseAutomator.AutomationProviders.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\TFSTestCaseAutomator\TestCaseAutomator.AutomationProviders.Interfaces\bin\Release\TestCaseAutomator.AutomationProviders.Interfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
